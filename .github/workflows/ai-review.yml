@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: write # Necessário para criar os comentários no PR
+      pull-requests: write # Essencial para que a IA comente no seu PR
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -17,11 +17,11 @@ jobs:
           fetch-depth: 0
 
       - name: Gemini Code Review
-        uses: google-gemini/gemini-code-review@v1
+        uses: sshnaidm/gemini-code-review-action@v2 # <--- Nome corrigido aqui
         with:
-          gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          model: 'gemini-3.8-flash' # Modelo mais recente e inteligente para Engenharia de Software
+          gemini-key: ${{ secrets.GEMINI_API_KEY }} # Parâmetro esperado por esta action
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          model: 'gemini-3.8-flash' # Usando o modelo estável mais recente do seu painel
           language: 'Portuguese'
           prompt: |
             Aja como um Engenheiro de Segurança Sênior (DevSecOps). 
