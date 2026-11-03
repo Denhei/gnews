@@ -17,14 +17,13 @@ jobs:
           fetch-depth: 0
 
       - name: AI Reviewer
-        uses: anc95/ChatGPT-CodeReview@v1.0.24 # Versão estável fixada
+        uses: anc95/ChatGPT-CodeReview@main # Action que orquestra a revisão
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          # Apontando para a raiz de compatibilidade aceita pelo SDK interno da Action
           OPENAI_API_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
           LANGUAGE: Portuguese
-          MODEL: gemini-3.8-flash # Usando um modelo com maior estabilidade de rota estável
+          MODEL: gemini-3.8-flash
           PROMPT: |
             Aja como um Engenheiro de Segurança Sênior (DevSecOps). 
             Analise o DIFF deste Pull Request buscando:
