@@ -21,9 +21,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENAI_API_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai
+          # Apontando para a raiz de compatibilidade aceita pelo SDK interno da Action
+          OPENAI_API_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
           LANGUAGE: Portuguese
-          MODEL: gemini-3.1-flash-lite
+          MODEL: gemini-2.5-flash # Usando um modelo com maior estabilidade de rota estável
           PROMPT: |
             Aja como um Engenheiro de Segurança Sênior (DevSecOps). 
             Analise o DIFF deste Pull Request buscando:
