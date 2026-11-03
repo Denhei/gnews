@@ -17,11 +17,11 @@ jobs:
           fetch-depth: 0
 
       - name: AI Reviewer
-        uses: anc95/ChatGPT-CodeReview@main # Action que orquestra a revisão
+        uses: anc95/ChatGPT-CodeReview@v1.0.24 # Versão estável fixada
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENAI_API_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+          OPENAI_API_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai
           LANGUAGE: Portuguese
           MODEL: gemini-3.1-flash-lite
           PROMPT: |
