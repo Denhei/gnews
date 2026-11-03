@@ -21,7 +21,7 @@ jobs:
         with:
           gemini-key: ${{ secrets.GEMINI_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          model: 'gemini-1.5-flash' # <--- Alterado para a rota estável de alta disponibilidade do Google
+          model: 'gemini-3.8-flash' # <--- Alterado para a rota estável de alta disponibilidade do Google
           language: 'Portuguese'
           prompt: |
             Aja como um Engenheiro de Segurança Sênior (DevSecOps). 
